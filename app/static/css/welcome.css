@@ -1,0 +1,61 @@
+body{
+    margin:0;
+    padding:0;
+
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+
+    font-family: Arial, sans-serif;
+}
+
+.overlay{
+
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background-color: rgba(0,0,0,0.6);
+
+    color:white;
+}
+
+h1{
+    font-size:50px;
+    color: gold;
+}
+
+p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.buttons button{
+
+    padding:12px 30px;
+
+    margin:10px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    background-color: gold;
+
+    color:black;
+
+}
+
+.buttons button:hover{
+
+    background-color:white;
+
+}

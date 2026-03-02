@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login - Glam Zone</title>
+
+<link rel="stylesheet" href="/static/css/login.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h2>Login Form</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Email or Phone" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit">LOGIN</button>
+
+        </form>
+
+        <p>Not a member? <a href="/signup_page/">Signup now</a></p>
+
+    </div>
+
+</div>
+
+<script>
+    console.log("Login page loaded");
+</script>
+
+</body>
+</html>

@@ -2,8 +2,7 @@ body{
     margin:0;
     padding:0;
 
-    background-image: url("background.jpg");
-    background: linear-gradient(rgba(8, 1, 1, 0.85));
+    background-image: url("background.jpg");;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome | Glam Zone</title>
+
+    <link rel="stylesheet" href="{% static '/css/welcome.css' %}">
+    
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <h1>Welcome Customer</h1>
+
+
+        <div class="buttons">
+
+            <button onclick="goToLogin()">Login</button>
+
+            <button onclick="goToSignup()">Sign Up</button>
+
+        </div>
+
+    </div>
+
+<script>
+        function goToLogin()
+         {
+
+            window.location.href = "/login/";
+
+        }
+
+        function goToSignup() 
+        {
+
+            window.location.href = "/signup/";
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
