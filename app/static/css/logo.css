@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    padding:0;
+
+    background-image: url("background.jpg");
+    background: linear-gradient(rgba(8, 1, 1, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: Arial;
+}
+
+.overlay{
+
+    text-align:center;
+    margin-top:150px;
+
+    background-color: black;
+    padding:40px;
+}
+
+.logo{
+    width:200px;
+}
+
+
+h1{
+    color: gold;
+    font-size:50px;
+}
