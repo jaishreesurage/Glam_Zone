@@ -1,11 +1,37 @@
+{% extends "app/basic1.html" %}
+{% load static %}
+
+{% block content %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=50, initial-scale=1.0">
-    <title>Document</title>
+
+<title>{{brand.name}} Products</title>
+
+<link rel="stylesheet" href="{% static '/css/brands.css/' %}">
+
 </head>
 <body>
-    <h1>brand page </h1>
+    <center><h1 class="brand-title">Cosmetic Brands</h1></center>
+    <div class="brand-container">
+
+{% for brand in brands %}
+
+<div class="brand-card">
+
+<a href="/products/{{brand.id}}/">
+
+<img src="{{brand.image.url}}" class="brand-image">
+
+<h3>{{brand.name}}</h3>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
 </body>
 </html>
+{% endblock %}

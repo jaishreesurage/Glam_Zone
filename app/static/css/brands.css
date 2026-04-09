@@ -1,0 +1,55 @@
+body{
+    background-color:pink;
+    color:white;
+}
+
+.brand-title{
+color:rgb(23, 21, 21);
+text-align:center;
+font-size:40px;
+}
+/* Brand container */
+.brand-container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr); /* 3 brands per row */
+gap:30px;
+padding-top:40px;
+}
+
+/* Brand card */
+
+.brand-card{
+background:rgba(0, 0, 0, 0.0);
+padding:20px;
+text-align:center;
+border-radius:10px;
+transition:0.3s;
+}
+
+.brand-card:hover{
+transform:scale(1.05);
+}
+
+/* Brand image size control */
+
+.brand-image{
+width:180px;
+height:100%;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* Brand name */
+
+.brand-card h3{
+color:black;
+margin-top:10px;
+font-size:20px;
+
+}
+
+.brand-card a{
+    text-decoration: none;
+}

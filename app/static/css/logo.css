@@ -1,29 +1,32 @@
+/* full black background*/
 body{
     margin:0;
     padding:0;
 
-    background-image: url("background.jpg");;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 
     font-family: Arial;
 }
 
+/* center content*/
 .overlay{
 
     text-align:center;
-    margin-top:150px;
-
-    background-color: black;
-    padding:40px;
 }
 
+/* logo image*/
 .logo{
     width:200px;
+    height: auto;
 }
 
-
+/* glam zone text */
 h1{
     color: gold;
     font-size:50px;

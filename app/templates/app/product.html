@@ -1,0 +1,27 @@
+
+{% load static %}
+
+
+<h1>Products</h1>
+
+<div class="grid">
+
+{% for product in products %}
+
+<div class="product">
+
+<img src="{{product.image.url}}">
+
+<h3>{{product.name}}</h3>
+
+<p>₹ {{product.price}}</p>
+
+<p>{{product.description}}</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+{% endfor %}
+
+</div>

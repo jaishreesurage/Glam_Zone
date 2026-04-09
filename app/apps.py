@@ -1,5 +1,15 @@
 from django.apps import AppConfig
+from django.contrib import admin
 
 
 class AppConfig(AppConfig):
-    name = "app"
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'app'
+
+
+
+# Register models so we can add data from admin panel
+
+
+
+

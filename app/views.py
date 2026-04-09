@@ -85,7 +85,7 @@ def login_page(request):
         else:
 
             messages.error(request, "Invalid username or password")
-            return redirect("login_page")
+            return redirect("brands")
 
 
     return render(request, "app/login.html")
@@ -100,8 +100,24 @@ def login_success(request):
     return render(request, "app/login_success.html")
 
 
+# Show all brands
 def brands(request):
 
-    return render(request, 'app/brands.html')
+    # Get all brands from database
+    brands = Brand.objects.all()
 
+    return render(request, "app/brands.html", {"brands": brands})
+
+
+# Show products of selected brand
+def products(request, brand_id):
+
+    products = Product.objects.filter(brand_id=brand_id)
+
+    return render(request, "app/product.html", {"products": products})
+
+
+# Cart page
+def cart(request):
+    return render(request, "app/cart.html")
 
