@@ -1,1 +1,54 @@
-<h1>cart</h1>
+{% extends "app/basic1.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/cart.css/' %}">
+</head>
+
+
+<div class="cart-container">
+
+<h1 class="cart-title">Cart</h1>
+
+{% if products %}
+
+{% for product in products %}
+
+
+<div class="cart-box">
+<!-- Product Image -->
+<img src="{{ product.image.url }}" class="cart-img">
+
+<!-- Product Details -->
+<div class="cart-info">
+    <h3>{{ product.name }}</h3>
+    <p class="cart-price">₹ {{ product.price }}</p>
+</div>
+
+<!-- Remove Button -->
+<a href="/remove/{{ product.id }}/">
+    <button class="remove-btn">Remove</button>
+</a>
+<a href="/buy-now/{{ product.id }}/">
+    <button class="buy-btn">Buy Now</button>
+</a>
+</div>
+
+{% endfor %}
+
+<!-- Total -->
+<div class="total-box">
+    <h2>Total: ₹ {{ total }}</h2>
+</div>
+
+{% else %}
+
+<p class="empty-text">Your cart is empty</p>
+
+{% endif %}
+
+</div>
+
+
+{% endblock %}

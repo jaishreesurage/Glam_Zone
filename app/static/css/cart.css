@@ -1,0 +1,98 @@
+/* ===== CART PAGE ===== */
+
+/* Page background */
+body {
+    background: pink;
+    font-family: Arial;
+    color: white;
+}
+
+/* Cart container */
+.cart-container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* Cart heading */
+.cart-title {
+    text-align: center;
+    color: pink;
+    margin-bottom: 30px;
+}
+
+/* Product box */
+.cart-box {
+    background: #111;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Product image */
+.cart-img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+
+/* Product info */
+.cart-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Product price */
+.cart-price {
+    color: pink;
+    font-weight: bold;
+}
+
+/* Remove button */
+.remove-btn {
+    background: pink;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Remove hover */
+.remove-btn:hover {
+    background: hotpink;
+}
+/* Buy Now button */
+.buy-btn {
+    background: pink;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Buy Now hover */
+.buy-btn:hover {
+    background: hotpink;
+}
+
+/* Total section */
+.total-box {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Total text */
+.total-box h2 {
+    color: pink;
+}
+
+/* Empty text */
+.empty-text {
+    text-align: center;
+    margin-top: 50px;
+    color: gray;
+}

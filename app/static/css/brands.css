@@ -21,7 +21,7 @@ padding-top:40px;
 /* Brand card */
 
 .brand-card{
-background:rgba(0, 0, 0, 0.0);
+background: rgba(0,0,0,0.0);
 padding:20px;
 text-align:center;
 border-radius:10px;
@@ -35,10 +35,10 @@ transform:scale(1.05);
 /* Brand image size control */
 
 .brand-image{
-width:180px;
-height:100%;
+width:100%;
+height:70%;
 object-fit:cover;
-border-radius:10px;
+border-radius:10%;
 }
 
 /* Brand name */

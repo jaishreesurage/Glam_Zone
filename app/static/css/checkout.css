@@ -1,0 +1,74 @@
+body{
+    background:pink;
+    font-family:Arial;
+}
+
+/* MAIN */
+.checkout-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
+}
+
+/* LEFT */
+.checkout-left{
+    width:55%;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+}
+
+/* RIGHT */
+.checkout-right{
+    width:30%;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+
+/* FORM */
+.form-row{
+    display:flex;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.form-row input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+/* PAYMENT */
+.payment button{
+    padding:10px;
+    margin-right:10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* PRODUCT */
+.product-box img{
+    width:120px;
+}
+
+/* SUMMARY */
+.summary p{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* BUTTON */
+.checkout-btn{
+    width:100%;
+    padding:12px;
+    background:pink;
+    border:none;
+    font-weight:bold;
+    margin-top:20px;
+    cursor:pointer;
+}

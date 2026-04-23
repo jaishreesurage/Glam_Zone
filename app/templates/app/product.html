@@ -1,27 +1,45 @@
-
+{% extends "app/basic1.html" %}
 {% load static %}
 
+{% block content %}
 
-<h1>Products</h1>
+<head>
+    <link rel="stylesheet" href="{% static 'css/product.css/' %}">
+</head>
+<div class="title">
+    <h1>Products</h1>
+</div>
 
 <div class="grid">
 
-{% for product in products %}
+    {% for product in products %}
 
-<div class="product">
+    <div class="product">
 
-<img src="{{product.image.url}}">
+        <img src="{{ product.image.url }}" alt="">
 
-<h3>{{product.name}}</h3>
+        <h3>{{ product.name }}</h3>
 
-<p>₹ {{product.price}}</p>
+        <p class="desc">{{ product.description }}</p>
 
-<p>{{product.description}}</p>
+        <p class="price">₹ {{ product.price }}</p>
 
-<button>Add to Cart</button>
+        <div class="btns">
+
+            <a href="/add-to-cart/{{ product.id }}/">
+                <button class="cart-btn">Add to Cart</button>
+            </a>
+
+            <a href="/buy-now/{{ product.id }}/">
+                <button class="buy-btn">Buy Now</button>
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
 
 </div>
 
-{% endfor %}
-
-</div>
+{% endblock %}
