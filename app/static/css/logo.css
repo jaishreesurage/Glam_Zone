@@ -14,16 +14,13 @@ body{
     font-family: Arial;
 }
 
-/* center content*/
-.overlay{
-
+.logo{
     text-align:center;
 }
 
-/* logo image*/
-.logo{
-    width:200px;
-    height: auto;
+.logo-img{
+    width:120px;   /* size adjust kar sakti ho */
+    margin-bottom:10px;
 }
 
 /* glam zone text */

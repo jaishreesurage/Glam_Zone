@@ -1,6 +1,7 @@
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Glam Zone</title>
 
@@ -11,113 +12,127 @@
 
 <body>
 
-<!-- HEADER START -->
-<!-- Top Header Start -->
-<div class="top-header">
+    <!-- HEADER START -->
+    <!-- Top Header Start -->
+    <div class="top-header">
 
-    <div class="left-links">
-        <a href="#">FAQs</a>
-        <span>|</span>
-        <a href="#">Help</a>
-        <span>|</span>
-        <a href="#">Support</a>
+        <div class="left-links">
+            <a href="#">FAQs</a>
+            <span>|</span>
+            <a href="#">Help</a>
+            <span>|</span>
+            <a href="#">Support</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
     </div>
+    <!-- Top Header End -->
+    <header class="header">
 
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-
-</div>
-<!-- Top Header End -->
-<header class="header">
-
+    <!-- LEFT SIDE -->
     <div class="logo">
         Glam Zone
     </div>
 
+    <!-- RIGHT SIDE -->
     <nav class="navbar">
 
-        
-        
         <a href="{% url 'brands' %}">Brands</a>
         <a href="{% url 'cart' %}">🛒</a>
 
+        {% if user.is_authenticated %}
+
+        <a href="{% url 'logout' %}">Logout</a>
+
+        {% else %}
+
+        <div class="dropdown">
+            <a href="#">👤</a>
+
+            <div class="dropdown-content">
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Sign Up</a>
+            </div>
+        </div>
+
+        {% endif %}
 
     </nav>
 
-
 </header>
-
-<!-- HEADER END -->
-
+    <!-- HEADER END -->
 
 
-<!-- PAGE CONTENT -->
-<div class="content">
 
-{% block content %}
+    <!-- PAGE CONTENT -->
+    <div class="content">
 
-{% endblock %}
+        {% block content %}
 
-</div>
-
-<!-- FOOTER start-->
-<footer class="footer">
-
-    <!-- Featured Start -->
-    <div class="featured-container">
-        <div class="feature-box">
-            <span class="emoji">✔️</span>
-            <h5>Quality Product</h5>
-        </div>
-
-        <div class="feature-box">
-            <span class="emoji">🚚</span>
-            <h5>Free Shipping</h5>
-        </div>
-
-        <div class="feature-box">
-            <span class="emoji">🔄</span>
-            <h5>14-Day Return</h5>
-        </div>
-
-        <div class="feature-box">
-            <span class="emoji">📞</span>
-            <h5>24/7 Support</h5>
-        </div>
-    </div>
-    <!-- Featured End -->
-
-
-    <!-- Footer Container -->
-    <div class="footer-container">
-
-        <div class="footer-box">
-            <h3>Glam Zone</h3>
-            <p>Luxury cosmetic products for beauty lovers.</p>
-        </div>
-
-        <div class="footer-box">
-            <h3>Quick Links</h3>
-            <a href="/brands/">Brands</a>
-            <a href="/cart/">Cart</a>
-        </div>
-
-        <div class="footer-box">
-            <h3>Contact</h3>
-            <p>Email: glamzone@gmail.com</p>
-            <p>Phone: +91 9876543210</p>
-        </div>
+        {% endblock %}
 
     </div>
 
-    <p class="copyright">
-        © 2026 Glam Zone | All Rights Reserved
-    </p>
+    <!-- FOOTER start-->
+    <footer class="footer">
 
-</footer>
-<!-- FOOTER END -->
+        <!-- Featured Start -->
+        <div class="featured-container">
+            <div class="feature-box">
+                <span class="emoji">✔️</span>
+                <h5>Quality Product</h5>
+            </div>
+
+            <div class="feature-box">
+                <span class="emoji">🚚</span>
+                <h5>Free Shipping</h5>
+            </div>
+
+            <div class="feature-box">
+                <span class="emoji">🔄</span>
+                <h5>14-Day Return</h5>
+            </div>
+
+            <div class="feature-box">
+                <span class="emoji">📞</span>
+                <h5>24/7 Support</h5>
+            </div>
+        </div>
+        <!-- Featured End -->
+
+
+        <!-- Footer Container -->
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>Glam Zone</h3>
+                <p>Luxury cosmetic products for beauty lovers.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="/brands/">Brands</a>
+                <a href="/cart/">Cart</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Email: glamzone@gmail.com</p>
+                <p>Phone: +91 9876543210</p>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Glam Zone | All Rights Reserved
+        </p>
+
+    </footer>
+    <!-- FOOTER END -->

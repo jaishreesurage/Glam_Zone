@@ -33,7 +33,7 @@ def signup_page(request):
         if User.objects.filter(username=username).exists():
 
             messages.error(request, "Username already exists")
-            return redirect("signup_page")
+            return redirect("register")
 
 
         # create user
@@ -80,25 +80,22 @@ def login_page(request):
 
             login(request, user)
 
-            return redirect("login_success")
+            return redirect("brands")
 
         else:
 
             messages.error(request, "Invalid username or password")
-            return redirect("brands")
-
+            return redirect("login")
 
     return render(request, "app/login.html")
 
 
-
 # =========================
-# LOGIN SUCCESS VIEW
+# LOGOUT VIEW (NEW)
 # =========================
-def login_success(request):
-
-    return render(request, "app/login_success.html")
-
+def logout_view(request):
+    logout(request)
+    return redirect('welcome')
 
 # Show all brands
 def brands(request):
