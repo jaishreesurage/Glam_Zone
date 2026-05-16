@@ -53,30 +53,33 @@ body {
 /* Remove button */
 .remove-btn {
     background: pink;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
+    color: black;
+    border: 10px solid black;
+    padding: 8px 15px;
+    border-radius: 15px;
 }
 
 /* Remove hover */
 .remove-btn:hover {
-    background: hotpink;
+    background: black;
+    color: white;
+    transform: scale(1.1);
 }
+
 /* Buy Now button */
 .buy-btn {
     background: pink;
     color: black;
-    border: none;
+    border: 10px solid black;
     padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 15px;
 }
 
 /* Buy Now hover */
 .buy-btn:hover {
-    background: hotpink;
+    background: black;
+    color: white;
+    transform: scale(1.1);
 }
 
 /* Total section */

@@ -28,7 +28,15 @@ def signup_page(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
+         # validations
+        if "@" not in email:
+            messages.error(request, "Email must contain @")
+            return redirect("register")
 
+        if len(password) < 6:
+            messages.error(request, "Password must be at least 6 characters")
+            return redirect("register")
+        
         # check username already exist
         if User.objects.filter(username=username).exists():
 
@@ -54,7 +62,7 @@ def signup_page(request):
 
 
         messages.success(request, "Signup successful")
-        return redirect("login_page")
+        return redirect("brands")
 
 
     return render(request, "app/signup.html")
@@ -144,7 +152,6 @@ def remove_from_cart(request, product_id):
 
     cart = request.session.get('cart', [])
 
-    # अगर product cart में है → remove करो
     if product_id in cart:
         cart.remove(product_id)
 
@@ -161,11 +168,12 @@ def buy_now(request, product_id):
     return redirect('checkout')
 
 def checkout(request):
+
     product_id = request.session.get('buy_now')
 
     product = None
 
     if product_id:
-        product = get_object_or_404(Product, id=product_id)
+        product = Product.objects.filter(id=product_id).first()
 
     return render(request, "app/checkout.html", {'product': product})

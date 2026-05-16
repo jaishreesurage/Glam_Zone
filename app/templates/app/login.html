@@ -1,41 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Login - Glam Zone</title>
+    <title>Login - Glam Zone</title>
 
-<link rel="stylesheet" href="{% static '/css/login.css/' %}">
+    <link rel="stylesheet" href="{% static '/css/login.css/' %}">
 
 </head>
+
 <body>
+    
+    <div class="container">
+        <img src="{% static '/images/sign.jpg' %}" class="bg-image">
+        <div class="form-box">
 
-<div class="container">
+            <h2>Login</h2>
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
 
-    <div class="form-box">
+            <form action="" method="post" enctype="multipart/form-data"></form>
+                {% csrf_token %}
 
-        <h2>Login Form</h2>
+                <input type="text" name="username" placeholder="Email or Phone"
+                    pattern="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)|(^[0-9]{10}$)"
+                    title="Enter valid email or 10 digit phone number" required>
 
-        <form method="POST">
-            {% csrf_token %}
+                <input type="password" name="password" placeholder="Password" minlength="6" required>
 
-            <input type="text" name="username" placeholder="Email or Phone" required>
+                <button type="submit">LOGIN</button>
 
-            <input type="password" name="password" placeholder="Password" required>
+            </form>
 
-            <button type="submit">LOGIN</button>
+            <p>Not a member? <a href="{% url 'register' %}">Create Account</a></p>
 
-        </form>
-
-        <p>Not a member? <a href="/signup_page/">Signup now</a></p>
+        </div>
 
     </div>
 
-</div>
-
-<script>
-    console.log("Login page loaded");
-</script>
+    <script>
+        console.log("Login page loaded");
+    </script>
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
 
 </body>
+
 </html>

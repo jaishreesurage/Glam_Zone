@@ -11,23 +11,24 @@
 </head>
 
 <body>
-    <div class="logo">
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="logo">
 
-        <img src="{% static 'images/logo.jpeg' %}" class="logo-img">
+            <img src="{% static 'images/logo.jpeg' %}" class="logo-img">
 
-        <h1>Glam Zone</h1>
+            <h1>Glam Zone</h1>
 
-    </div>
-
-
-    <script>
-        // 5 seconds ke baad redirect
-        setTimeout(function () {
-            window.location.href = "{% url 'brands' %}";
-        }, 10000);
-    </script>
+        </div>
 
 
+        <script>
+            // 5 seconds ke baad redirect
+            setTimeout(function () {
+                window.location.href = "{% url 'brands' %}";
+            }, 10000);
+        </script>
+
+    </form>
 </body>
 
 </html>
