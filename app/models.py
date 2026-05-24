@@ -71,4 +71,4 @@ class Product(models.Model):
     
 class ImageData(models.Model):
     Imagename = models.CharField(max_length=100)
-    Image = models.ImageField(upload_to="img/")
+    Image = models.ImageField(upload_to="imag/")
