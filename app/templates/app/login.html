@@ -6,49 +6,47 @@
 
     <title>Login - Glam Zone</title>
 
-    <link rel="stylesheet" href="{% static '/css/login.css/' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body>
-    
+
     <div class="container">
-        <img src="{% static '/images/sign.jpg' %}" class="bg-image">
+
         <div class="form-box">
 
-            <h2>Login</h2>
+            <center>
+                <h2>Login</h2>
+            </center>
+
             {% if messages %}
-            {% for message in messages %}
-            <p style="color:red;">{{ message }}</p>
-            {% endfor %}
+                {% for message in messages %}
+                    <p style="color:red;">{{ message }}</p>
+                {% endfor %}
             {% endif %}
 
-            <form action="" method="post" enctype="multipart/form-data"></form>
+            <form method="POST">
+
                 {% csrf_token %}
 
-                <input type="text" name="username" placeholder="Email or Phone"
-                    pattern="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)|(^[0-9]{10}$)"
-                    title="Enter valid email or 10 digit phone number" required>
+                <input type="text" name="username" placeholder="Username" required>
 
-                <input type="password" name="password" placeholder="Password" minlength="6" required>
+                <input type="password" name="password" placeholder="Password" required>
 
                 <button type="submit">LOGIN</button>
 
             </form>
 
-            <p>Not a member? <a href="{% url 'register' %}">Create Account</a></p>
+            <p>
+                Not a member?
+                <a href="{% url 'register' %}">Create Account</a>
+            </p>
 
         </div>
 
     </div>
 
-    <script>
-        console.log("Login page loaded");
-    </script>
-    {% if error %}
-    <p style="color:red;">{{ error }}</p>
-    {% endif %}
-
 </body>
-
 </html>

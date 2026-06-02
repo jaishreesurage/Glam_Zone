@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logged Out</title>
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+</head>
+<body>
+
+<div class="logout-box">
+
+    <h1>👋 Logged Out</h1>
+
+    <p>
+        Thank you for visiting Glam Zone
+    </p>
+
+    <a href="{% url 'login' %}" class="btn">
+        Login Again
+    </a>
+
+    <a href="{% url 'brands' %}" class="btn">
+        Continue Shopping
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Order Success</title>
+
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+
+</head>
+
+<body>
+
+<div class="success-box">
+
+    <div class="check">
+
+        ✔
+
+    </div>
+
+    <h1>Order Confirmed!</h1>
+
+    <p>
+        Your order has been placed successfully.
+    </p>
+
+    <a href="{% url 'brands' %}">
+
+        <button>
+            Continue Shopping
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+</html>

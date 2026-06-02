@@ -1,0 +1,158 @@
+{% extends "app/basic1.html" %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/compare.css' %}">
+</head>
+
+<div class="compare-container">
+
+    <h1 class="compare-title">Compare Products</h1>
+
+    <form method="GET" class="compare-form">
+
+        <select name="p1">
+
+            <option value="">Select Product 1</option>
+
+            {% for p in products %}
+            <option value="{{ p.id }}">
+                {{ p.name }}
+            </option>
+            {% endfor %}
+
+        </select>
+        <select name="brand1">
+
+            <option>Select Brand 1</option>
+
+            {% for brand in brands %}
+            <option value="{{ brand.id }}">
+                {{ brand.name }}
+            </option>
+            {% endfor %}
+
+        </select>
+
+        <select name="p2">
+
+            <option value="">Select Product 2</option>
+
+            {% for p in products %}
+            <option value="{{ p.id }}">
+                {{ p.name }}
+            </option>
+            {% endfor %}
+
+        </select>
+        <select name="brand2">
+
+            <option>Select Brand 2</option>
+
+            {% for brand in brands %}
+            <option value="{{ brand.id }}">
+                {{ brand.name }}
+            </option>
+            {% endfor %}
+
+        </select>
+
+        <button type="submit" class="compare-btn">
+            Compare
+        </button>
+
+    </form>
+
+    {% if product1 and product2 %}
+
+    <div class="compare-box">
+
+        <!-- Product 1 -->
+
+        <div class="compare-card">
+
+            <img src="{{ product1.image.url }}" alt="">
+
+            <h2>{{ product1.name }}</h2>
+
+            <p class="compare-price">
+                ₹{{ product1.price }}
+            </p>
+
+            {% if product1.price < product2.price %} <span class="winner">🏆 Best Value</span>
+                {% endif %}
+
+                <a href="{% url 'add_to_cart' product1.id %}">
+                    <button class="compare-btn">
+                        Add To Cart
+                    </button>
+                </a>
+
+        </div>
+
+        <!-- Product 2 -->
+
+        <div class="compare-card">
+
+            <img src="{{ product2.image.url }}" alt="">
+
+            <h2>{{ product2.name }}</h2>
+
+            <p class="compare-price">
+                ₹{{ product2.price }}
+            </p>
+
+            {% if product2.price < product1.price %} <span class="winner">🏆 Best Value</span>
+                {% endif %}
+
+                <a href="{% url 'add_to_cart' product2.id %}">
+                    <button class="compare-btn">
+                        Add To Cart
+                    </button>
+                </a>
+
+        </div>
+
+    </div>
+
+    <!-- Comparison Table -->
+
+    <div class="compare-table">
+
+        <table>
+
+            <tr>
+                <th>Feature</th>
+                <th>{{ product1.name }}</th>
+                <th>{{ product2.name }}</th>
+            </tr>
+
+            <tr>
+                <td>Price</td>
+                <td>₹{{ product1.price }}</td>
+                <td>₹{{ product2.price }}</td>
+            </tr>
+
+            <tr>
+                <td>Brand</td>
+                <td>{{ product1.brand }}</td>
+                <td>{{ product2.brand }}</td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td>{{ product1.description }}</td>
+                <td>{{ product2.description }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

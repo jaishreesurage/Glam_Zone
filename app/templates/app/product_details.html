@@ -1,0 +1,74 @@
+{% extends "app/basic1.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/product_details.css' %}">
+
+<div class="details-container">
+
+    <div class="left">
+
+        <img src="{{ product.image.url }}" class="main-image">
+
+    </div>
+
+    <div class="right">
+
+        <h1>{{ product.name }}</h1>
+
+        <p>{{ product.description }}</p>
+
+        <h2>₹ {{ product.price }}</h2>
+
+         <div class="btns">
+
+            <a href="/add-to-cart/{{ product.id }}/">
+
+                <button class="cart-btn">
+
+                    Add to Cart
+
+                </button>
+
+            </a>
+
+            <a href="/buy-now/{{ product.id }}/">
+
+                <button class="buy-btn">
+
+                    Buy Now
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<h2 class="related-title">Related Products</h2>
+
+<div class="related-grid">
+
+    {% for item in related_products %}
+
+    <div class="related-card">
+
+        <a href="{% url 'product_details' item.id %}">
+            <img src="{{ item.image.url }}">
+        </a>
+
+        <h3>{{ item.name }}</h3>
+
+        <p>₹ {{ item.price }}</p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

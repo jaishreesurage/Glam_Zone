@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+</head>
+
+<body>
+
+<div class="payment-box">
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <center><h3>Personal Information</h3></center>
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <input type="text"
+               placeholder="Phone Number"
+               pattern="[0-9]{10}"
+               required>
+
+        <input type="text"
+               placeholder="Shipping Address"
+               required>
+
+        <h3>Delivery Type</h3>
+
+        <label>
+            <input type="radio" name="delivery">
+            Express
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="delivery"
+                   checked>
+            Normal
+        </label>
+
+        <h3>Payment Method</h3>
+
+        <label>
+            <input type="radio" name="payment">
+            Cash On Delivery
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="payment"
+                   checked>
+            Digital Payment
+        </label>
+
+        <div class="cards">
+
+            💳 💵 🏦 📱
+
+        </div>
+
+        <center><button type="submit">
+            Confirm Order
+        </button></center>
+
+    </form>
+
+</div>
+
+</body>
+</html>

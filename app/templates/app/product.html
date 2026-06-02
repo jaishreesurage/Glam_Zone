@@ -4,10 +4,15 @@
 {% block content %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'css/product.css/' %}">
+
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+
 </head>
+
 <div class="title">
+
     <h1>Products</h1>
+
 </div>
 
 <div class="grid">
@@ -16,22 +21,63 @@
 
     <div class="product">
 
-        <img src="{{ product.image.url }}" alt="">
+        <!-- PRODUCT IMAGE -->
 
-        <h3>{{ product.name }}</h3>
+        <a href="{% url 'product_details' product.id %}">
 
-        <p class="desc">{{ product.description }}</p>
+            <img src="{{ product.image.url }}" alt="">
 
-        <p class="price">₹ {{ product.price }}</p>
+        </a>
+
+        <!-- PRODUCT NAME -->
+
+        <a href="{% url 'product_details' product.id %}" class="product-link">
+
+            <h3>{{ product.name }}</h3>
+
+        </a>
+
+        <!-- DESCRIPTION -->
+
+        <p class="desc">
+
+            {{ product.description }}
+
+        </p>
+
+        <!-- PRICE -->
+
+        <p class="price">
+
+            ₹ {{ product.price }}
+
+        </p>
+
+        <!-- BUTTONS -->
 
         <div class="btns">
 
             <a href="/add-to-cart/{{ product.id }}/">
-                <button class="cart-btn">Add to Cart</button>
+
+                <button class="cart-btn">
+
+                    Cart
+
+                </button>
+
             </a>
 
             <a href="/buy-now/{{ product.id }}/">
-                <button class="buy-btn">Buy Now</button>
+
+                <button class="buy-btn">
+
+                    Buy Now
+
+                </button>
+
+            </a>
+            <a href="/compare/?p1={{ product.id }}">
+                <button class="compare-btn">Compare</button>
             </a>
 
         </div>

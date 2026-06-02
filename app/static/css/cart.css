@@ -2,7 +2,15 @@
 
 /* Page background */
 body {
-    background: pink;
+         background:
+    linear-gradient(
+        135deg,
+         #fff0f5 0%,
+        #ffd6e8 30%,
+        #ff9ecb 70%,
+        #ff69b4 100%
+
+    );
     font-family: Arial;
     color: white;
 }
@@ -16,7 +24,7 @@ body {
 /* Cart heading */
 .cart-title {
     text-align: center;
-    color: pink;
+    color: rgb(19, 16, 16);
     margin-bottom: 30px;
 }
 
@@ -90,7 +98,7 @@ body {
 
 /* Total text */
 .total-box h2 {
-    color: pink;
+    color: black;
 }
 
 /* Empty text */

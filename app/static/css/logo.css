@@ -1,30 +1,110 @@
-/* full black background*/
 body{
+
     margin:0;
     padding:0;
 
-    background-color: black;
-    height: 100vh;
+    height:100vh;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
 
-    font-family: Arial;
+    font-family:Arial, sans-serif;
+
+     background:
+    linear-gradient(
+        135deg,
+         #fff0f5 0%,
+        #ffd6e8 30%,
+        #ff9ecb 70%,
+        #ff69b4 100%
+
+    );
+
 }
+
+/* MAIN BOX */
 
 .logo{
+
+    background:#f6c9dd;
+
+    padding:60px 80px;
+
+    border-radius:40px;
+
     text-align:center;
+
+    box-shadow:0 0 25px rgba(255,105,180,0.3);
+
+    animation:updown 3s infinite ease-in-out;
 }
 
-.logo-img{
-    width:120px;   /* size adjust kar sakti ho */
+/* ANIMATION */
+
+@keyframes updown{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* TITLE */
+
+.logo h1{
+
+    font-size:70px;
+
+    color:black;
+
     margin-bottom:10px;
 }
 
-/* glam zone text */
-h1{
-    color: gold;
-    font-size:50px;
+/* TAGLINE */
+
+.logo p{
+
+    font-size:22px;
+
+    color:#444;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+.enter-btn{
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        to right,
+        #f48fb1,
+        black
+    );
+
+    color:white;
+
+    padding:14px 40px;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+    transition:0.3s;
+
+    display:inline-block;
+}
+
+.enter-btn:hover{
+
+    transform:scale(1.05);
 }

@@ -1,0 +1,191 @@
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial, sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #fff0f5 0%,
+        #ffd6e8 30%,
+        #ff9ecb 70%,
+        #ff69b4 100%
+    );
+}
+
+/* TITLE */
+
+.compare-title{
+    text-align:center;
+    color:black;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+/* FORM */
+
+.compare-form{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.compare-form select{
+    padding:10px;
+    margin:10px;
+    border:1px solid black;
+    border-radius:8px;
+    background:rgb(250, 245, 246)
+}
+
+/* BUTTON */
+
+.compare-btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+
+    background:linear-gradient(
+        to right,
+        #ff9ecb,
+        #000000
+    );
+
+    color:white;
+    transition:.3s;
+}
+
+.compare-btn:hover{
+    transform:scale(1.05);
+
+    background:linear-gradient(
+        to right,
+        #b0a6ad,
+        #090e16
+    );
+}
+
+/* PRODUCT CARDS */
+
+.compare-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.compare-card{
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 0 25px rgba(249, 128, 188, 0.4);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.compare-card img{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.compare-card h2{
+    color:black;
+    margin-top:15px;
+}
+
+.compare-price{
+    color:#d63384;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* FEATURES */
+
+.compare-features p{
+    color:black;
+    padding:10px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+/* WINNER */
+
+.winner{
+    display:block;
+    margin:10px 0;
+    color:green;
+    font-weight:bold;
+}
+
+/* TABLE */
+
+.compare-table{
+    margin-top:40px;
+    overflow-x:auto;
+}
+
+.compare-table table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:rgba(255,255,255,0.2);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+.compare-table th{
+
+    background:#ff9ecb;
+
+    color:black;
+
+    padding:15px;
+}
+
+.compare-table td{
+
+    padding:15px;
+
+    text-align:center;
+
+    color:black;
+
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+.compare-table tr:nth-child(even){
+
+    background:rgba(255,255,255,0.15);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .compare-box{
+        grid-template-columns:1fr;
+    }
+
+    .compare-card img{
+        width:150px;
+        height:150px;
+    }
+
+    .compare-title{
+        font-size:30px;
+    }
+}

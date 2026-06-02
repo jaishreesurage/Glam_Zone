@@ -11,13 +11,7 @@ from .models import Product,Brand
 def LogoPage(request):
     return render(request,"app/logo.html")
 
-#welcome view 
-def welcome(request):
-    return render(request, "app/welcome.html")
-
-# =========================
 # SIGNUP VIEW
-# =========================
 def signup_page(request):
 
     # check form submit
@@ -59,6 +53,7 @@ def signup_page(request):
             email=email,
             
         )
+        login(request, user)
 
 
         messages.success(request, "Signup successful")
@@ -69,9 +64,7 @@ def signup_page(request):
 
 
 
-# =========================
-# LOGIN VIEW
-# =========================
+
 def login_page(request):
 
     if request.method == "POST":
@@ -98,13 +91,6 @@ def login_page(request):
     return render(request, "app/login.html")
 
 
-# =========================
-# LOGOUT VIEW (NEW)
-# =========================
-def logout_view(request):
-    logout(request)
-    return redirect('welcome')
-
 # Show all brands
 def brands(request):
 
@@ -120,6 +106,24 @@ def products(request, brand_id):
     products = Product.objects.filter(brand_id=brand_id)
 
     return render(request, "app/product.html", {"products": products})
+
+# Product Details Page
+def product_details(request, id):
+
+    # selected product
+    product = Product.objects.get(id=id)
+
+    # related products
+    related_products = Product.objects.filter(
+        brand=product.brand
+    ).exclude(id=id)
+
+    return render(request, "app/product_details.html", {
+
+        'product': product,
+
+        'related_products': related_products
+    })
 
 
 # Add to Cart (sirf product add karega)
@@ -165,15 +169,45 @@ def buy_now(request, product_id):
     # single product store
     request.session['buy_now'] = product_id
 
-    return redirect('checkout')
+    return redirect('payment')
 
-def checkout(request):
+def payment(request):
 
-    product_id = request.session.get('buy_now')
+    if request.method == "POST":
 
-    product = None
+        return redirect('order_success')
 
-    if product_id:
-        product = Product.objects.filter(id=product_id).first()
+    return render(request, "app/payment.html")
 
-    return render(request, "app/checkout.html", {'product': product})
+
+def order_success(request):
+
+    return render(request, "app/order_success.html")
+
+def compare_products(request):
+
+    brands = Brand.objects.all()
+    products = Product.objects.all()
+
+    product1 = None
+    product2 = None
+
+    p1 = request.GET.get('p1')
+    p2 = request.GET.get('p2')
+
+    if p1:
+        product1 = Product.objects.get(id=p1)
+
+    if p2:
+        product2 = Product.objects.get(id=p2)
+
+    return render(request, "app/compare.html", {
+        'brands': brands,
+        'products': products,
+        'product1': product1,
+        'product2': product2,
+    })
+
+def logout_view(request):
+    logout(request)
+    return render(request, "app/logout.html")

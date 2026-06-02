@@ -6,29 +6,30 @@
     <meta charset="UTF-8">
     <title>Glam Zone</title>
 
-    <link rel="stylesheet" href="{% static '/css/logo.css/' %}">
-
+    <link rel="stylesheet" href="{% static 'css/logo.css' %}">
 </head>
 
 <body>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="logo">
 
-            <img src="{% static 'images/logo.jpeg' %}" class="logo-img">
+<div class="logo">
 
-            <h1>Glam Zone</h1>
+    <h1>Glam Zone</h1>
+    <p>Beauty Begins Here ✨</p>
+    <a href="{% url 'brands' %}" class="enter-btn">
+    Enter Store
+</a>
+</div>
 
-        </div>
+<script>
 
+    // 5 second baad redirect
+    setTimeout(function () {
 
-        <script>
-            // 5 seconds ke baad redirect
-            setTimeout(function () {
-                window.location.href = "{% url 'brands' %}";
-            }, 10000);
-        </script>
+        window.location.href = "{% url 'brands' %}";
 
-    </form>
+    }, 50000);
+
+</script>
+
 </body>
-
 </html>
