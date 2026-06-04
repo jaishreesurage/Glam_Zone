@@ -1,56 +1,67 @@
-  body{
-     background-color:pink;
+body{
+    background-color:pink;
     color:white;
-
 }
 
 .brand-title{
-color:rgb(31, 29, 29);
-text-align:center;
-font-size:40px;
+    color:#1f1d1d;
+    text-align:center;
+    font-size:40px;
 }
+
 /* Brand container */
 .brand-container{
-width:90%;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr); /* 3 brands per row */
-gap:30px;
-padding-top:40px;
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    padding-top:40px;
 }
 
 /* Brand card */
-
 .brand-card{
-background:pink;
-padding:20px;
-text-align:center;
-border-radius:10px;
-transition:0.3s;
+    background:(0, 0, 0);
+    padding:20px;
+    text-align:center;
+    border-radius:15px;
+    transition:0.3s;
 }
 
 .brand-card:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
 
-/* Brand image size control */
-
+/* Circle Image */
 .brand-image{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:10%;
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin:0 auto;
 }
 
 /* Brand name */
-
 .brand-card h3{
-color:rgb(15, 14, 14);
-margin-top:10px;
-font-size:20px;
-
+    color:#0f0e0e;
+    margin-top:15px;
+    font-size:20px;
 }
 
 .brand-card a{
-    text-decoration: none;
-}       
+    text-decoration:none;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .brand-container{
+        grid-template-columns:1fr;
+    }
+
+    .brand-image{
+        width:180px;
+        height:180px;
+    }
+}
